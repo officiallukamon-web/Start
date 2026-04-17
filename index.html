@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SABOR BRUTAL | Menú Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <span class="badge">ABIERTO AHORA</span>
+            <h1 class="glitch-text">SABOR <br> <span class="accent">ELITE</span></h1>
+            <p>Guisados, Chilaquiles y Energía Pura.</p>
+            <div class="scroll-indicator"></div>
+        </div>
+    </section>
+
+    <nav class="category-nav">
+        <div class="nav-scroll">
+            <button class="nav-item active" onclick="filter('todos')">TODO</button>
+            <button class="nav-item" onclick="filter('guisados')">GUISADOS</button>
+            <button class="nav-item" onclick="filter('chilaquiles')">CHILAQUILES</button>
+            <button class="nav-item" onclick="filter('bebidas')">SHAKES</button>
+        </div>
+    </nav>
+
+    <main id="menu-grid" class="container">
+        </main>
+
+    <div id="cart-bar" class="cart-floating hidden">
+        <div class="cart-flex" onclick="toggleCart()">
+            <div class="cart-info">
+                <i data-lucide="shopping-cart"></i>
+                <span id="cart-count">0</span> ARTÍCULOS
+            </div>
+            <div class="cart-total-preview">
+                $<span id="cart-total-bar">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>TU SELECCIÓN</h2>
+                <button class="close-modal" onclick="toggleCart()"><i data-lucide="x"></i></button>
+            </div>
+            
+            <div id="cart-items" class="cart-body">
+                </div>
+
+            <div class="modal-footer">
+                <div class="final-price">
+                    <span>TOTAL</span>
+                    <span id="cart-total-modal">$0</span>
+                </div>
+                <button class="btn-whatsapp-extreme" onclick="sendWhatsApp()">
+                    CONFIRMAR PEDIDO
+                    <i data-lucide="send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
